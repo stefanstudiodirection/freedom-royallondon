@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface AccountCardProps {
   type: 'current' | 'savings' | 'pension';
   title: string;
   subtitle: string;
-  amount: string;
+  amount: React.ReactNode;
   primaryAction: string;
   primaryIcon: string;
   secondaryIcon: string;
@@ -20,6 +21,7 @@ export const AccountCard: React.FC<AccountCardProps> = ({
   secondaryIcon
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const navigate = useNavigate();
 
   const getBackgroundColor = () => {
     switch (type) {
@@ -39,7 +41,11 @@ export const AccountCard: React.FC<AccountCardProps> = ({
   };
 
   const handlePrimaryAction = () => {
-    setIsExpanded(!isExpanded);
+    if (type === 'pension') {
+      navigate('/pension-warning');
+    } else {
+      setIsExpanded(!isExpanded);
+    }
   };
 
   const handleSecondaryAction = () => {
