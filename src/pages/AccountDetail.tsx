@@ -102,7 +102,7 @@ const AccountDetail: React.FC = () => {
             <div className="text-lg ml-2 font-semibold">{formatCurrency(account.balance)}</div>
           </div>
           {config.showCard && (
-            <div className="bg-gradient-to-br from-yellow-300 to-yellow-500 rounded-2xl p-4 flex flex-col items-start justify-center mb-4">
+            <div className="bg-[url('/card-background.png')] bg-cover bg-center rounded-2xl p-4 flex flex-col items-start justify-center mb-4">
               <div className="mb-2 text-white font-semibold">Peter Smith</div>
               <div className="flex gap-2 text-white mb-2 items-center">
                 <span className="tracking-widest text-lg font-mono">•••• 4562</span>
