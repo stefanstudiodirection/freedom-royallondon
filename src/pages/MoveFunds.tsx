@@ -34,6 +34,12 @@ export const MoveFunds: React.FC = () => {
   const [amount, setAmount] = useState('');
   const [currency, setCurrency] = useState<string>('GBP');
   
+  // Redirect to home if accessed without proper state
+  if (!location.state?.sourceAccount || !location.state?.destinationAccount) {
+    navigate('/', { replace: true });
+    return null;
+  }
+  
   const { sourceAccount, destinationAccount } = location.state as { 
     sourceAccount: AccountType; 
     destinationAccount: AccountType 
