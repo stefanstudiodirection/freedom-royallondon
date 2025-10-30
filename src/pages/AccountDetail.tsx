@@ -164,7 +164,7 @@ const AccountDetail: React.FC = () => {
           {config.actions && (
             <div className="flex w-full justify-between gap-2 mb-6">
               {config.actions.map(action => (
-                <div key={action.label} className="flex flex-col items-center text-yellow-300 text-xs font-medium gap-1 w-full">
+                <div key={action.label} className="flex flex-col items-center text-white text-xs font-medium gap-1 w-full">
                   <button className="bg-[#E4B33D] w-12 h-12 rounded-lg flex items-center justify-center mb-1"><span className="text-lg">{action.icon}</span></button>
                   {action.label}
                 </div>
