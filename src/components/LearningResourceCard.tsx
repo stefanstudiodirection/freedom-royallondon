@@ -19,7 +19,7 @@ export const LearningResourceCard: React.FC<LearningResourceCardProps> = ({
       <img
         src={image}
         alt={title}
-        className="aspect-video w-full object-cover rounded-lg"
+        className="aspect-[16/10] w-full object-cover rounded-lg"
       />
       <h3 className="text-white text-lg leading-snug pt-3 text-left">
         {title}
