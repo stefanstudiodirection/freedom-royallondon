@@ -13,6 +13,7 @@ import MoveFunds from "./pages/MoveFunds";
 import ReviewTransfer from "./pages/ReviewTransfer";
 import TransferConfirmed from "./pages/TransferConfirmed";
 import NotFound from "./pages/NotFound";
+import AccountDetail from "./pages/AccountDetail";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/move-funds" element={<MoveFunds />} />
             <Route path="/review-transfer" element={<ReviewTransfer />} />
             <Route path="/transfer-confirmed" element={<TransferConfirmed />} />
+            <Route path="/account/:id" element={<AccountDetail />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

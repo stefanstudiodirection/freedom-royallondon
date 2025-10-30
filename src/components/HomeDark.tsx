@@ -5,10 +5,12 @@ import { AccountCard } from "./AccountCard";
 import { PromotionCard } from "./PromotionCard";
 import { BottomNavigation } from "./BottomNavigation";
 import { useAccounts } from "@/contexts/AccountContext";
+import { useNavigate } from 'react-router-dom';
 
 export const HomeDark: React.FC = () => {
   const [showAllPromotions, setShowAllPromotions] = useState(false);
   const { accounts } = useAccounts();
+  const navigate = useNavigate();
 
   const formatBalance = (balance: number) => {
     const parts = balance.toLocaleString('en-GB', { 
@@ -49,17 +51,19 @@ export const HomeDark: React.FC = () => {
 
         <main className="w-full mt-6 px-4">
           <section aria-label="Account overview" className="w-full">
-            <AccountCard
-              type="current"
-              title="Current Account"
-              subtitle="Funds available to spend"
-              amount={formatBalance(accounts.currentAccount.balance)}
-              primaryAction="Card details"
-              primaryIcon="https://api.builder.io/api/v1/image/assets/TEMP/0d7398014e84f6d0301446900b81b658bf87b703?placeholderIfAbsent=true"
-              secondaryIcon="https://api.builder.io/api/v1/image/assets/TEMP/1a679bd7b3be1f0055ae6f39f41097bff967e2f1?placeholderIfAbsent=true"
-            />
+            <div onClick={() => navigate('/account/currentAccount')} style={{ cursor: 'pointer' }}>
+              <AccountCard
+                type="current"
+                title="Current Account"
+                subtitle="Funds available to spend"
+                amount={formatBalance(accounts.currentAccount.balance)}
+                primaryAction="Card details"
+                primaryIcon="https://api.builder.io/api/v1/image/assets/TEMP/0d7398014e84f6d0301446900b81b658bf87b703?placeholderIfAbsent=true"
+                secondaryIcon="https://api.builder.io/api/v1/image/assets/TEMP/1a679bd7b3be1f0055ae6f39f41097bff967e2f1?placeholderIfAbsent=true"
+              />
+            </div>
 
-            <div className="mt-[9px]">
+            <div className="mt-[9px]" onClick={() => navigate('/account/savings')} style={{ cursor: 'pointer' }}>
               <AccountCard
                 type="savings"
                 title="Savings"
@@ -71,7 +75,7 @@ export const HomeDark: React.FC = () => {
               />
             </div>
 
-            <div className="mt-[9px]">
+            <div className="mt-[9px]" onClick={() => navigate('/account/pension')} style={{ cursor: 'pointer' }}>
               <AccountCard
                 type="pension"
                 title="Pension"
