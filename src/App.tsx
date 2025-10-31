@@ -16,36 +16,41 @@ import AccountDetail from "./pages/AccountDetail";
 import Learn from "./pages/Learn";
 import LearnArticle from "./pages/LearnArticle";
 import Budgeting from "./pages/Budgeting";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-      <TooltipProvider>
-        <AccountProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/transactions" element={<Transactions />} />
-            <Route path="/pension-warning" element={<PensionWarning />} />
-            <Route path="/move-funds" element={<MoveFunds />} />
-            <Route path="/review-transfer" element={<ReviewTransfer />} />
-            <Route path="/transfer-confirmed" element={<TransferConfirmed />} />
-            <Route path="/account/:id" element={<AccountDetail />} />
-            <Route path="/learn" element={<Learn />} />
-            <Route path="/learn/:id" element={<LearnArticle />} />
-            <Route path="/budgeting" element={<Budgeting />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </AccountProvider>
-    </TooltipProvider>
-    </ThemeProvider>
-  </QueryClientProvider>
+	<QueryClientProvider client={queryClient}>
+		<ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+			<TooltipProvider>
+				<AccountProvider>
+					<Toaster />
+					<Sonner />
+					<BrowserRouter>
+						<ScrollToTop />
+						<Routes>
+							<Route path="/" element={<Index />} />
+							<Route path="/transactions" element={<Transactions />} />
+							<Route path="/pension-warning" element={<PensionWarning />} />
+							<Route path="/move-funds" element={<MoveFunds />} />
+							<Route path="/review-transfer" element={<ReviewTransfer />} />
+							<Route
+								path="/transfer-confirmed"
+								element={<TransferConfirmed />}
+							/>
+							<Route path="/account/:id" element={<AccountDetail />} />
+							<Route path="/learn" element={<Learn />} />
+							<Route path="/learn/:id" element={<LearnArticle />} />
+							<Route path="/budgeting" element={<Budgeting />} />
+							{/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+							<Route path="*" element={<NotFound />} />
+						</Routes>
+					</BrowserRouter>
+				</AccountProvider>
+			</TooltipProvider>
+		</ThemeProvider>
+	</QueryClientProvider>
 );
 
 export default App;
