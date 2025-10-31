@@ -1,36 +1,114 @@
 import React from "react";
 
 interface CreditCardProps {
-  cardholderName: string;
-  cardNumber: string;
-  validUntil: string;
-  cvv?: string;
-  bankName: string;
-  cardType: string;
+	cardholderName: string;
+	cardNumber: string;
+	validUntil: string;
+	cvv?: string;
+	bankName: string;
+	cardType: string;
 }
 
 export const CreditCard: React.FC<CreditCardProps> = ({
-  cardholderName,
-  cardNumber,
-  validUntil,
-  cvv = "***",
-  bankName,
-  cardType,
+	cardholderName,
+	cardNumber,
+	validUntil,
+	cvv = "***",
+	bankName,
+	cardType,
 }) => {
-  return (
-    <div className="bg-[url('/card-background.webp')] bg-cover bg-center aspect-[16/9] rounded-2xl p-4 flex flex-col items-start justify-center">
-      <div className="mb-2 text-white font-semibold">{cardholderName}</div>
-      <div className="flex gap-2 text-white mb-2 items-center">
-        <span className="tracking-widest text-lg font-mono">•••• {cardNumber}</span>
-      </div>
-      <div className="flex justify-between w-full mb-1">
-        <span className="text-xs font-mono text-white opacity-80">Valid {validUntil}</span>
-        <span className="text-xs font-mono text-white opacity-80">CVV {cvv}</span>
-      </div>
-      <div className="flex justify-between w-full mt-2 items-center">
-        <span className="text-white font-medium text-xs">{bankName}</span>
-        <span className="text-white font-bold text-xs">{cardType}</span>
-      </div>
-    </div>
-  );
+	return (
+		// <div className="bg-[url('/card-background.webp')] bg-cover bg-center aspect-[16/9] rounded-2xl p-4 flex flex-col items-start justify-center">
+		//   <div className="mb-2 text-white font-semibold">{cardholderName}</div>
+		//   <div className="flex gap-2 text-white mb-2 items-center">
+		//     <span className="tracking-widest text-lg font-mono">•••• {cardNumber}</span>
+		//   </div>
+		//   <div className="flex justify-between w-full mb-1">
+		//     <span className="text-xs font-mono text-white opacity-80">Valid {validUntil}</span>
+		//     <span className="text-xs font-mono text-white opacity-80">CVV {cvv}</span>
+		//   </div>
+		//   <div className="flex justify-between w-full mt-2 items-center">
+		//     <span className="text-white font-medium text-xs">{bankName}</span>
+		//     <span className="text-white font-bold text-xs">{cardType}</span>
+		//   </div>
+		// </div>
+		<div className="relative bg-gradient-to-br from-[#C89B2E] via-[#E4B33D] to-[#B8862A] aspect-[16/9] rounded-2xl p-6 flex flex-col justify-between overflow-hidden">
+			{/* Decorative gradient circle */}
+			<div className="absolute -bottom-20 -right-10 w-96 h-96 rounded-full bg-gradient-to-br from-yellow-300/40 to-transparent"></div>
+
+			{/* Header */}
+			<div className="flex justify-between items-start relative z-10">
+				<div className="flex items-center gap-2">
+					{/* Mercer Logo */}
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="101"
+						height="16"
+						viewBox="0 0 101 16"
+						fill="none"
+						className="h-4"
+					>
+						<path
+							d="M33.5096 15.1377V0.896475H36.2361L41.0665 8.54643L45.9473 0.896475H48.6066V15.1377H46.0652V4.8239L41.0497 12.7129L36.051 4.84098V15.1377H33.5096ZM56.7694 15.4792C55.6081 15.4792 54.5814 15.2572 53.6894 14.8303C52.7974 14.3863 52.0905 13.7545 51.5687 12.9008C51.047 12.047 50.7945 11.0053 50.7945 9.77588C50.7945 8.64888 51.0302 7.64141 51.4846 6.77054C51.939 5.89968 52.5786 5.23372 53.3864 4.73853C54.1943 4.24333 55.12 4.00427 56.1635 4.00427C57.1565 4.00427 58.0317 4.22625 58.7722 4.67022C59.5128 5.11419 60.085 5.72892 60.4889 6.53148C60.8929 7.33404 61.0948 8.27321 61.0948 9.34899C61.0948 9.50267 61.0948 9.63927 61.078 9.79296C61.0612 9.92956 61.0443 10.1515 61.0275 10.4418H53.2181C53.3696 11.3469 53.7567 12.047 54.3963 12.5422C55.0358 13.0544 55.8942 13.2935 56.9713 13.2935C58.3514 13.2935 59.6137 12.8495 60.775 11.9787V14.2156C60.2196 14.6083 59.5969 14.9157 58.89 15.1377C58.2 15.3597 57.4931 15.4792 56.7694 15.4792ZM56.0793 5.93383C55.2883 5.93383 54.6487 6.18997 54.1606 6.66809C53.6726 7.16329 53.3528 7.84632 53.235 8.73426H58.7722C58.7722 8.5635 58.7554 8.42689 58.7385 8.30736C58.6207 7.53895 58.3178 6.9413 57.8634 6.53148C57.4089 6.13874 56.8199 5.93383 56.0793 5.93383ZM63.3501 15.1377V4.32871H65.7401L65.7569 6.58271C66.043 5.84845 66.4638 5.2508 67.0528 4.8239C67.6251 4.37993 68.2815 4.17503 69.0052 4.17503C69.2071 4.17503 69.4428 4.1921 69.7121 4.22625C69.9813 4.2604 70.2001 4.31163 70.3516 4.37993V6.8047C70.1496 6.73639 69.8972 6.68516 69.5774 6.63394C69.2576 6.58271 68.9547 6.56564 68.6854 6.56564C67.7597 6.56564 67.0697 6.873 66.5816 7.47065C66.0935 8.08538 65.8579 8.95624 65.8579 10.1003V15.1548H63.3501V15.1377ZM76.9324 15.4792C75.7879 15.4792 74.7949 15.2401 73.9533 14.7791C73.1118 14.318 72.4554 13.6521 71.9842 12.7983C71.5298 11.9445 71.2941 10.937 71.2941 9.79296C71.2941 8.6318 71.5298 7.60726 72.001 6.75347C72.4723 5.88261 73.1286 5.19957 73.9702 4.72145C74.8117 4.22625 75.7879 3.98719 76.8987 3.98719C77.4541 3.98719 77.959 4.0555 78.4303 4.1921C78.9015 4.32871 79.3391 4.49947 79.7599 4.6873V7.02668C79.3559 6.77054 78.9184 6.58271 78.4471 6.46318C77.9758 6.32657 77.5214 6.27535 77.0838 6.27535C76.0908 6.27535 75.2998 6.58271 74.6939 7.19744C74.1048 7.81216 73.8019 8.64888 73.8019 9.72466C73.8019 10.8346 74.1048 11.7054 74.6939 12.3202C75.2998 12.9349 76.1245 13.2423 77.168 13.2423C77.6056 13.2423 78.0095 13.191 78.3966 13.0886C78.7837 12.9861 79.2381 12.8154 79.743 12.5934V14.8303C79.3559 15.0352 78.9184 15.1889 78.4471 15.3255C77.9758 15.4109 77.4709 15.4792 76.9324 15.4792ZM87.2158 15.4792C86.0545 15.4792 85.0278 15.2572 84.1358 14.8303C83.2438 14.3863 82.5369 13.7545 82.0152 12.9008C81.4934 12.047 81.241 11.0053 81.241 9.77588C81.241 8.64888 81.4766 7.64141 81.931 6.77054C82.3854 5.89968 83.025 5.23372 83.8329 4.73853C84.6407 4.24333 85.5664 4.00427 86.6099 4.00427C87.6029 4.00427 88.4781 4.22625 89.2186 4.67022C89.9592 5.11419 90.5314 5.72892 90.9353 6.53148C91.3393 7.33404 91.5412 8.27321 91.5412 9.34899C91.5412 9.50267 91.5412 9.63927 91.5244 9.79296C91.5076 9.92956 91.4908 10.1515 91.4739 10.4418H83.6646C83.816 11.3469 84.2031 12.047 84.8427 12.5422C85.4823 13.0544 86.3406 13.2935 87.4178 13.2935C88.7979 13.2935 90.0602 12.8495 91.2215 11.9787V14.2156C90.6661 14.6083 90.0433 14.9157 89.3364 15.1377C88.6464 15.3597 87.9227 15.4792 87.2158 15.4792ZM86.5089 5.93383C85.7179 5.93383 85.0783 6.18997 84.5902 6.66809C84.1022 7.16329 83.7824 7.84632 83.6646 8.73426H89.2018C89.2018 8.5635 89.185 8.42689 89.1681 8.30736C89.0503 7.53895 88.7474 6.9413 88.293 6.53148C87.8554 6.13874 87.2495 5.93383 86.5089 5.93383ZM94.0153 15.1377V4.32871H96.3884L96.4053 6.58271C96.6914 5.84845 97.1122 5.2508 97.7012 4.8239C98.2735 4.37993 98.9298 4.17503 99.6536 4.17503C99.8555 4.17503 100.091 4.1921 100.36 4.22625C100.63 4.2604 100.849 4.31163 101 4.37993V6.8047C100.798 6.73639 100.546 6.68516 100.226 6.63394C99.906 6.58271 99.6031 6.56564 99.3506 6.56564C98.4249 6.56564 97.718 6.873 97.23 7.47065C96.7419 8.08538 96.5062 8.95624 96.5062 10.1003V15.1548H94.0153V15.1377ZM25.7844 3.45784L20.1798 0.179296C19.7927 -0.0597652 19.1363 -0.0597652 18.7492 0.179296L3.29878 9.22946L11.8487 2.5699L7.75887 0.179296C7.37177 -0.0597652 6.71538 -0.0597652 6.32828 0.179296L0.723713 3.45784C0.336611 3.6969 0 4.2604 0 4.72145V11.2786C0 11.7396 0.31978 12.3031 0.723713 12.5422L6.32828 15.8207C6.71538 16.0598 7.37177 16.0598 7.75887 15.8207L23.2093 6.77054L14.6594 13.4301L18.7324 15.8207C19.1195 16.0598 19.7759 16.0598 20.163 15.8207L25.7675 12.5422C26.1546 12.3031 26.4913 11.7396 26.4913 11.2786V4.72145C26.5081 4.2604 26.1715 3.67983 25.7844 3.45784Z"
+							fill="white"
+						/>
+					</svg>
+				</div>
+
+				{/* Menu button */}
+				<div className="w-10 h-10 rounded-full bg-black flex items-center justify-center">
+					<div className="flex flex-col gap-1">
+						<div className="w-1 h-1 rounded-full bg-white"></div>
+						<div className="w-1 h-1 rounded-full bg-white"></div>
+						<div className="w-1 h-1 rounded-full bg-white"></div>
+					</div>
+				</div>
+			</div>
+
+			{/* Cardholder name */}
+			<div className="relative z-10">
+				<div className="text-white text-xl font-semibold mb-4">
+					{cardholderName}
+				</div>
+
+				{/* Valid and CVV */}
+				<div className="flex gap-8 mb-8">
+					<div>
+						<div className="text-white text-xs opacity-80 mb-1">Valid</div>
+						<div className="text-white text-base font-medium">{validUntil}</div>
+					</div>
+					<div>
+						<div className="text-white text-xs opacity-80 mb-1">CVV</div>
+						<div className="text-white text-base font-medium">{cvv}</div>
+					</div>
+				</div>
+			</div>
+
+			{/* Bottom section */}
+			<div className="flex justify-between items-end relative z-10">
+				{/* Card number */}
+				<div className="text-white text-2xl font-mono tracking-wider">
+					•••• {cardNumber}
+				</div>
+
+				{/* Logos */}
+				<div className="flex items-center gap-3">
+					{/* Freedom text */}
+					<span className="text-white text-lg italic font-serif">
+						{cardType}
+					</span>
+
+					{/* VISA logo */}
+					<svg
+						fill="#ffffff"
+						viewBox="0 0 32 32"
+						className="h-5"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path d="M15.854 11.329l-2.003 9.367h-2.424l2.006-9.367zM26.051 17.377l1.275-3.518 0.735 3.518zM28.754 20.696h2.242l-1.956-9.367h-2.069c-0.003-0-0.007-0-0.010-0-0.459 0-0.853 0.281-1.019 0.68l-0.003 0.007-3.635 8.68h2.544l0.506-1.4h3.109zM22.429 17.638c0.010-2.473-3.419-2.609-3.395-3.714 0.008-0.336 0.327-0.694 1.027-0.785 0.13-0.013 0.28-0.021 0.432-0.021 0.711 0 1.385 0.162 1.985 0.452l-0.027-0.012 0.425-1.987c-0.673-0.261-1.452-0.413-2.266-0.416h-0.001c-2.396 0-4.081 1.275-4.096 3.098-0.015 1.348 1.203 2.099 2.122 2.549 0.945 0.459 1.262 0.754 1.257 1.163-0.006 0.63-0.752 0.906-1.45 0.917-0.032 0.001-0.071 0.001-0.109 0.001-0.871 0-1.691-0.219-2.407-0.606l0.027 0.013-0.439 2.052c0.786 0.315 1.697 0.497 2.651 0.497 0.015 0 0.030-0 0.045-0h-0.002c2.546 0 4.211-1.257 4.22-3.204zM12.391 11.329l-3.926 9.367h-2.562l-1.932-7.477c-0.037-0.364-0.26-0.668-0.57-0.82l-0.006-0.003c-0.688-0.338-1.488-0.613-2.325-0.786l-0.066-0.011 0.058-0.271h4.124c0 0 0.001 0 0.001 0 0.562 0 1.028 0.411 1.115 0.948l0.001 0.006 1.021 5.421 2.522-6.376z" />
+					</svg>
+				</div>
+			</div>
+		</div>
+	);
 };
