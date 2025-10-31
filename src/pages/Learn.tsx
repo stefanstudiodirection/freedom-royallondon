@@ -1,6 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { LearningResourceCard } from '@/components/LearningResourceCard';
+
+const mockArticles = [
+  {
+    id: '1',
+    title: 'Why £1 Today Could Mean £1.60 Less Tomorrow',
+    image: '/placeholder.svg'
+  }
+];
 
 const Learn: React.FC = () => {
   const navigate = useNavigate();
@@ -15,7 +24,17 @@ const Learn: React.FC = () => {
         <ArrowLeft className="w-6 h-6" />
       </button>
       <h1 className="text-2xl font-semibold mb-4">Learning Resources</h1>
-      <p className="text-[#716860]">Coming soon...</p>
+      
+      <div className="flex gap-4 overflow-x-auto pb-4">
+        {mockArticles.map((article) => (
+          <LearningResourceCard
+            key={article.id}
+            title={article.title}
+            image={article.image}
+            onClick={() => navigate(`/learn/${article.id}`)}
+          />
+        ))}
+      </div>
     </div>
   );
 };

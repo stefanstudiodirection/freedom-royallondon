@@ -14,6 +14,7 @@ import TransferConfirmed from "./pages/TransferConfirmed";
 import NotFound from "./pages/NotFound";
 import AccountDetail from "./pages/AccountDetail";
 import Learn from "./pages/Learn";
+import LearnArticle from "./pages/LearnArticle";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/transfer-confirmed" element={<TransferConfirmed />} />
             <Route path="/account/:id" element={<AccountDetail />} />
             <Route path="/learn" element={<Learn />} />
+            <Route path="/learn/:id" element={<LearnArticle />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
