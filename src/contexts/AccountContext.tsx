@@ -64,7 +64,7 @@ const INITIAL_ACCOUNTS: Record<AccountType, Account> = {
       </svg>
     ),
     balance: 74500.0,
-    color: '#60A5FA',
+    color: '#E4B33D',
   },
 };
 
