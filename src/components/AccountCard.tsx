@@ -88,10 +88,10 @@ export const AccountCard: React.FC<AccountCardProps> = ({
 
       {/* Bottom section: Only for Pension */}
       {type === 'pension' && (
-        <div className="flex justify-between items-center mt-3 pt-3 border-t border-[#211E1E]/10">
-          <span className="text-sm text-[#211E1E]">Funds available to spend</span>
+        <div className="flex justify-between items-center mt-3 pt-3">
+          <span className="text-sm text-white">Funds available to spend</span>
           <button 
-            className="flex items-center gap-1 text-sm text-[#211E1E] font-medium"
+            className="flex items-center gap-1 text-sm text-white font-medium"
             onClick={(e) => {
               e.stopPropagation();
               onClick();
