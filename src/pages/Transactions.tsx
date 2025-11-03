@@ -71,7 +71,7 @@ const Transactions: React.FC = () => {
 			{/* Status Bar */}
 			<div className="px-6 pt-4 pb-6">
 				{/* Header */}
-				<div className="flex justify-between items-center">
+				<div className="flex justify-between items-center mb-8">
 					<h1 className="text-[28px] font-semibold">Transactions</h1>
 					<div className="flex gap-3">
 						<button className="w-10 h-10 rounded-full bg-white dark:bg-[#1C1C1E] flex items-center justify-center">
@@ -84,7 +84,7 @@ const Transactions: React.FC = () => {
 				</div>
 
 				{/* Account Filter Tabs */}
-				<div className="px-6 pb-6 flex gap-2">
+				<div className="pb-6 flex gap-2">
 					{(Object.keys(accountLabels) as AccountType[]).map((account) => (
 						<button
 							key={account}
@@ -101,7 +101,7 @@ const Transactions: React.FC = () => {
 				</div>
 
 				{/* Transactions List */}
-				<div className="px-6">
+				<div className="">
 					{filteredTransactions.map((transaction) => (
 						<div
 							key={transaction.id}
