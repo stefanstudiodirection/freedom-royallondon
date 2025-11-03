@@ -68,6 +68,7 @@ export const BottomNavigation: React.FC = () => {
           }`}
           onClick={() => navigate(item.path)}
           aria-pressed={isActive(item.path)}
+          disabled={item.id === "profile"}
         >
           <div className={isActive(item.path) ? "text-[#A488F5]" : "text-[#BCBBBB] dark:text-gray-400"}>
             {item.icon}
