@@ -49,7 +49,7 @@ export const BottomNavigation: React.FC = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="items-center flex w-full text-sm font-normal whitespace-nowrap text-center leading-[1.2] bg-white dark:bg-black pt-4 pb-6 px-2 border-t border-[#E5E5EA] dark:border-[#2C2C2E] fixed bottom-0 left-0 right-0 z-50">
+    <nav className="items-center flex w-full text-sm font-normal whitespace-nowrap text-center leading-[1.2] bg-white dark:bg-black pt-4 pb-6 px-2 border-t border-[#E5E5EA] dark:border-[#2C2C2E] fixed bottom-0 left-0 right-0 z-100">
       {navItems.map((item) => (
         <button
           key={item.id}
