@@ -44,11 +44,11 @@ export const AccountCard: React.FC<AccountCardProps> = ({
 
   const getZIndex = () => {
     switch (type) {
-      case 'pension':
+      case 'current':
         return 'z-10';
       case 'savings':
         return 'z-20';
-      case 'current':
+      case 'pension':
         return 'z-30';
       default:
         return 'z-0';
