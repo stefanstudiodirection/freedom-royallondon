@@ -97,7 +97,7 @@ export const ReviewTransfer: React.FC = () => {
 				</div>
 
 				{/* Transfer Summary Cards */}
-				<div className="space-y-4 mb-6">
+				<div className="space-y-4">
 					{/* Move From Card */}
 					<div className="bg-white dark:bg-[#211E1E] border border-border rounded-lg p-4">
 						<div className="flex items-center justify-between">
