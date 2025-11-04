@@ -79,7 +79,7 @@ export const ReviewTransfer: React.FC = () => {
 				</header>
 
 				{/* Amount Display */}
-				<div className="mb-6">
+				<div className="">
 					<p className="text-foreground text-sm mb-2">Amount to move</p>
 					<div className="flex items-center justify-between">
 						<p className="text-foreground text-4xl font-normal">
@@ -96,10 +96,12 @@ export const ReviewTransfer: React.FC = () => {
 					</div>
 				</div>
 
+        <div className="w-full h-px mt-6 mb-6" style={{ background: 'rgba(33, 30, 30, 0.15)' }}/>
+
 				{/* Transfer Summary Cards */}
-				<div className="space-y-4 mb-6">
+				<div className="">
 					{/* Move From Card */}
-					<div className="bg-white dark:bg-[#211E1E] rounded-lg p-4">
+					<div className="mb-3">
 						<div className="flex items-center justify-between">
 							<div className="flex items-center gap-3">
 								<div
@@ -129,7 +131,7 @@ export const ReviewTransfer: React.FC = () => {
 					</div>
 
 					{/* Move To Card */}
-					<div className="bg-white dark:bg-[#211E1E] rounded-lg p-4">
+					<div className="">
 						<div className="flex items-center justify-between">
 							<div className="flex items-center gap-3">
 								<div
@@ -158,6 +160,8 @@ export const ReviewTransfer: React.FC = () => {
 						</div>
 					</div>
 				</div>
+
+        <div className="w-full h-px mt-6 mb-6" style={{ background: 'rgba(33, 30, 30, 0.15)' }}/>
 
 				{/* Retirement Impact Warning - Only show if pension is involved */}
 				{showRetirementWarning && (
