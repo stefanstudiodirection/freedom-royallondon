@@ -419,7 +419,7 @@ const Budgeting: React.FC = () => {
 		<div className="min-h-screen bg-[#F3F3F3] dark:bg-black text-foreground max-w-[480px] mx-auto flex flex-col pb-[100px]">
 			<div className="px-4 py-6 flex flex-col flex-1">
 				{/* Header */}
-				<div className="flex items-center justify-between mb-4">
+				<div className="flex items-center justify-between mb-2">
 					<h1 className="text-[28px] font-normal text-foreground">
 						Budgeting
 					</h1>
@@ -434,9 +434,9 @@ const Budgeting: React.FC = () => {
 				</div>
 
 				{/* Subtitle */}
-				<p className="text-sm text-muted-foreground mb-6">
-					Set targets for saving categories so you can keep track of your
-					spending.
+				<p className="text-base text-muted-foreground mb-6">
+					Set targets for saving categories so you can 
+          keep track of your spending.
 				</p>
 
 				{/* Account Dropdown */}
@@ -461,10 +461,10 @@ const Budgeting: React.FC = () => {
 										{account.icon}
 									</div>
 									<div className="flex flex-col items-start">
-										<span className="text-sm text-muted-foreground">
+										<span className="text-base text-muted-foreground">
 											Account
 										</span>
-										<span className="text-foreground text-sm">
+										<span className="text-foreground text-lg">
 											{account.name}
 										</span>
 									</div>
@@ -472,8 +472,8 @@ const Budgeting: React.FC = () => {
 
 								{/* Right side - Balance info */}
 								<div className="flex flex-col items-end">
-									<span className="text-sm text-muted-foreground">Balance</span>
-									<span className="text-sm text-foreground">
+									<span className="text-base text-muted-foreground">Balance</span>
+									<span className="text-xl text-foreground">
 										{formatCurrency(account.balance)}
 									</span>
 								</div>
@@ -490,8 +490,8 @@ const Budgeting: React.FC = () => {
 									{accounts.savings.icon}
 								</div>
 								<div className="flex flex-col items-start">
-									<span className="font-normal">Savings account</span>
-									<span className="text-sm text-muted-foreground">
+									<span className="text-base font-normal">Savings account</span>
+									<span className="text-xl text-muted-foreground">
 										{formatCurrency(accounts.savings.balance)}
 									</span>
 								</div>
@@ -506,8 +506,8 @@ const Budgeting: React.FC = () => {
 									{accounts.currentAccount.icon}
 								</div>
 								<div className="flex flex-col items-start">
-									<span className="font-normal">Current account</span>
-									<span className="text-sm text-muted-foreground">
+									<span className="text-base font-normal">Current account</span>
+									<span className="text-xl text-muted-foreground">
 										{formatCurrency(accounts.currentAccount.balance)}
 									</span>
 								</div>
@@ -544,7 +544,7 @@ const Budgeting: React.FC = () => {
 									key={category.id}
 									className="min-w-[280px] bg-white dark:bg-[#211E1E] rounded-lg p-4"
 								>
-									<div className="flex items-start justify-between mb-3">
+									<div className="flex items-start justify-between mb-5">
 										<div className="flex items-center gap-3">
 											<div
 												className="w-10 h-10 rounded-lg flex items-center justify-center text-white"
@@ -553,17 +553,29 @@ const Budgeting: React.FC = () => {
 												{category.icon}
 											</div>
 											<div>
-												<h3 className="font-normal text-foreground">
+												<h3 className="text-xl font-normal text-foreground">
 													{category.name}
 												</h3>
-												<p className="text-xs text-muted-foreground">
+												<p className="text-sm text-muted-foreground">
 													{category.date}
 												</p>
 											</div>
 										</div>
 									</div>
 
-									<Progress
+									<div className="flex items-center justify-between text-sm mb-3">
+										<span className="text-muted-foreground">
+											<span style={{ color: account.color }}>
+												{formatCurrency(category.spent)}
+											</span>{" "}
+											/ {formatCurrency(category.target)}
+										</span>
+										{/* <span className="font-normal text-foreground">
+											{percentage.toFixed(0)}%
+										</span> */}
+									</div>
+
+                  <Progress
 										value={percentage}
 										className="mb-2 h-1"
 										style={{
@@ -572,17 +584,6 @@ const Budgeting: React.FC = () => {
 										}}
 									/>
 
-									<div className="flex items-center justify-between text-sm">
-										<span className="text-muted-foreground">
-											<span style={{ color: account.color }}>
-												{formatCurrency(category.spent)}
-											</span>{" "}
-											/ {formatCurrency(category.target)}
-										</span>
-										<span className="font-normal text-foreground">
-											{percentage.toFixed(0)}%
-										</span>
-									</div>
 								</div>
 							);
 						})}
@@ -614,14 +615,14 @@ const Budgeting: React.FC = () => {
 													<tspan
 														x={viewBox.cx}
 														y={(viewBox.cy || 0) - 10}
-														className="fill-muted-foreground text-xs"
+														className="fill-muted-foreground text-xl"
 													>
 														Total spending
 													</tspan>
 													<tspan
 														x={viewBox.cx}
 														y={(viewBox.cy || 0) + 10}
-														className="fill-foreground text-lg font-normal"
+														className="fill-foreground text-2xl font-normal"
 													>
 														{formatCurrency(totalSpent)}
 													</tspan>
@@ -657,13 +658,18 @@ const Budgeting: React.FC = () => {
 				<div>
 					<div className="flex items-center justify-between mb-4">
 						<h2 className="text-lg font-normal text-foreground">
-							Recent transactions
+							Transactions
 						</h2>
 						<button
-							className="text-sm text-[#A488F5] font-normal"
+							className="text-sm text-[#A488F5] font-normal self-stretch flex items-center gap-1"
 							onClick={() => navigate("/transactions")}
 						>
-							See all
+              <span className="text-[#A488F5] self-stretch my-auto">See all</span>
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/c7bef006abc66b8f7fa6574d6a4853ed2994e5d2?placeholderIfAbsent=true"
+                className="aspect-[1] object-contain w-5 self-stretch shrink-0 my-auto"
+                alt=""
+              />
 						</button>
 					</div>
 
