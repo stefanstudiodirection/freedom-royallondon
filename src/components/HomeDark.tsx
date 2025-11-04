@@ -13,6 +13,7 @@ import { currentAccountActions } from "@/pages/AccountDetail";
 import { ArrowRight } from 'lucide-react';
 import { useAccountCardsStagger } from "@/hooks/useAccountCardsStagger";
 import { useGSAP } from "@gsap/react";
+import gsap from "gsap"; 
 
 const mockArticles = [
   {
