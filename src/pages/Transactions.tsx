@@ -114,15 +114,15 @@ const Transactions: React.FC = () => {
 								{getTransactionIcon(transaction.type)}
 							</div>
 							<div className="flex-1 min-w-0">
-								<div className="text-foreground text-base font-normal">
+								<div className="text-xl font-normal text-foreground">
 									{getTransactionLabel(transaction.type)}
 								</div>
-								<div className="text-[#8E8E93] text-sm">
+								<div className="text-[#8E8E93] text-base">
 									{formatDate(transaction.date)}
 								</div>
 							</div>
 							<div
-								className={`text-lg font-normal ${
+								className={`text-xl font-normal ${
 									transaction.amount >= 0 ? "text-[#34C759]" : "text-foreground"
 								}`}
 							>
