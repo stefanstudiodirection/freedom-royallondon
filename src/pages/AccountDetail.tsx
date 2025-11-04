@@ -187,7 +187,7 @@ function getMoveFundsButtonStyles(accountId: AccountType, accountColor: string) 
 	}
 	
 	return {
-		className: "w-full py-4 rounded-lg mb-4 font-regular text-black text-base flex items-center justify-center gap-2",
+		className: "w-full py-4 rounded-lg mb-4 font-regular text-white text-base flex items-center justify-center gap-2",
 		style: { backgroundColor: accountColor }
 	};
 }
