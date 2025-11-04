@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
 	Search,
@@ -9,12 +9,16 @@ import {
 } from "lucide-react";
 import { BottomNavigation } from "@/components/BottomNavigation";
 import { AccountType, useAccounts } from "@/contexts/AccountContext";
+import {useTransactionCardsStagger} from "@/hooks/useTransactionCardsStagger";
 
 const Transactions: React.FC = () => {
 	const [selectedAccount, setSelectedAccount] =
 		useState<AccountType>("currentAccount");
 	const { transactions } = useAccounts();
 	const navigate = useNavigate();
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  useTransactionCardsStagger(containerRef);
 
 	const accountLabels: Record<AccountType, string> = {
 		currentAccount: "Current account",
@@ -101,11 +105,11 @@ const Transactions: React.FC = () => {
 				</div>
 
 				{/* Transactions List */}
-				<div className="">
+				<div className="" ref={containerRef}>
 					{filteredTransactions.map((transaction) => (
 						<div
 							key={transaction.id}
-							className="flex items-center gap-4 py-[12px] border-b border-[#E5E5EA] dark:border-[#2C2C2E] cursor-pointer hover:bg-[#E5E5EA] dark:hover:bg-[#1C1C1E]/30 transition-colors"
+							className="flex items-center gap-4 py-[12px] border-b border-[#E5E5EA] dark:border-[#2C2C2E] cursor-pointer hover:bg-[#E5E5EA] dark:hover:bg-[#1C1C1E]/30 transition-colors transaction-item"
 							onClick={() => {
 								/* Could navigate to transaction detail */
 							}}
