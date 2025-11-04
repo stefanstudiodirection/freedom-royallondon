@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
 				<div className="self-stretch flex items-center gap-3 my-auto">
 					<ThemeToggle />
 					<button
-						className="bg-[#fff] dark:bg-[rgba(33,30,30,1)] self-stretch flex min-h-12 w-12 items-center gap-2 justify-center h-12 my-auto px-3 rounded-[46px] hover:bg-[rgba(33,30,30,0.8)] transition-colors text-foreground"
+						className="bg-[#fff] dark:bg-[rgba(33,30,30,1)] self-stretch flex min-h-12 w-12 items-center gap-2 justify-center h-12 my-auto px-3 rounded-[46px] transition-colors text-foreground"
 						onClick={handleNotificationClick}
 						aria-label={`Notifications ${
 							notificationCount > 0 ? `(${notificationCount})` : ""
