@@ -113,7 +113,7 @@ export const SavingsWarning: React.FC = () => {
 					{/* Continue Button */}
 					<Button
 						onClick={handleContinue}
-						className="w-full h-14 bg-[#A488F5] hover:bg-[#9575e8] text-white font-medium text-base rounded-lg"
+						className="w-full h-14 bg-[#A488F5] hover:bg-[#9575e8] text-white font-normal text-base rounded-lg"
 					>
 						Submit request
 					</Button>

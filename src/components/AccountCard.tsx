@@ -81,7 +81,7 @@ export const AccountCard: React.FC<AccountCardProps> = ({
             />
           </div>
 					<h2
-						className={`${getTextColor()} text-[18px] font-medium leading-tight`}
+						className={`${getTextColor()} text-[18px] font-normal leading-tight`}
 					>
 						{accountName}
 					</h2>
@@ -106,7 +106,7 @@ export const AccountCard: React.FC<AccountCardProps> = ({
 						Funds available to spend
 					</span>
 					<button
-						className="flex items-center gap-1 text-sm text-white font-medium"
+						className="flex items-center gap-1 text-sm text-white font-normal"
 						onClick={(e) => {
 							e.stopPropagation();
 							onClick();

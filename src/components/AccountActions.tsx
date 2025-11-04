@@ -14,7 +14,7 @@ export const AccountActions: React.FC<AccountActionsProps> = ({ actions }) => {
       {actions.map(action => (
         <div 
           key={action.label} 
-          className="flex flex-col items-center text-foreground text-base font-medium gap-1 w-full"
+          className="flex flex-col items-center text-foreground text-base font-normal gap-1 w-full"
         >
           <button 
             className="bg-[#211E1E] dark:bg-[#211E1E] text-[#E4B33D] dark:text-[#E4B33D] w-14 h-14 rounded-lg flex items-center justify-center mb-1"

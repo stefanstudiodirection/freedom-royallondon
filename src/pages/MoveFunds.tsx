@@ -104,7 +104,7 @@ export const MoveFunds: React.FC = () => {
           >
             <ArrowLeft className="w-6 h-6" />
           </button>
-          <h1 className="flex-1 text-center text-lg font-medium pr-12 text-foreground">Move funds</h1>
+          <h1 className="flex-1 text-center text-lg font-normal pr-12 text-foreground">Move funds</h1>
         </header>
 
         {/* Amount Input Section */}
@@ -162,12 +162,12 @@ export const MoveFunds: React.FC = () => {
               </div>
               <div>
                 <p className="text-[#716860] text-sm">Move from</p>
-                <p className="text-foreground text-base font-medium">{source.name}</p>
+                <p className="text-foreground text-base font-normal">{source.name}</p>
               </div>
             </div>
             <div className="text-right">
               <p className="text-[#716860] text-sm">Balance</p>
-              <p className="text-foreground text-base font-medium">{formatCurrency(source.balance)}</p>
+              <p className="text-foreground text-base font-normal">{formatCurrency(source.balance)}</p>
             </div>
           </div>
 
@@ -191,12 +191,12 @@ export const MoveFunds: React.FC = () => {
               </div>
               <div>
                 <p className="text-[#716860] text-sm">Move to</p>
-                <p className="text-foreground text-base font-medium">{destination.name}</p>
+                <p className="text-foreground text-base font-normal">{destination.name}</p>
               </div>
             </div>
             <div className="text-right">
               <p className="text-[#716860] text-sm">Balance</p>
-              <p className="text-foreground text-base font-medium">{formatCurrency(destination.balance)}</p>
+              <p className="text-foreground text-base font-normal">{formatCurrency(destination.balance)}</p>
             </div>
           </div>
         </div>
@@ -206,7 +206,7 @@ export const MoveFunds: React.FC = () => {
           <Button 
             onClick={handleNext}
             disabled={!isValidAmount()}
-            className={`w-full h-14 text-base rounded-lg font-medium ${
+            className={`w-full h-14 text-base rounded-lg font-normal ${
               isValidAmount() 
                 ? 'bg-[#A488F5] hover:bg-[#9575e8] text-white' 
                 : 'bg-[#2a2626] text-[#716860] cursor-not-allowed'

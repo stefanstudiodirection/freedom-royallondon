@@ -98,11 +98,11 @@ export const CreditCard: React.FC<CreditCardProps> = ({
 				<div className="flex gap-8 mb-8">
 					<div>
 						<div className="text-white text-xs opacity-80 mb-1">Valid</div>
-						<div className="text-white text-base font-medium">{validUntil}</div>
+						<div className="text-white text-base font-normal">{validUntil}</div>
 					</div>
 					<div>
 						<div className="text-white text-xs opacity-80 mb-1">CVV</div>
-						<div className="text-white text-base font-medium">{cvv}</div>
+						<div className="text-white text-base font-normal">{cvv}</div>
 					</div>
 				</div>
 			</div>

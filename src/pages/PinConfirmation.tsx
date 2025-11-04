@@ -124,7 +124,7 @@ export const PinConfirmation: React.FC = () => {
           >
             <ArrowLeft className="w-6 h-6" />
           </button>
-          <h1 className="flex-1 text-center text-lg font-medium pr-12 text-foreground">Confirm transfer</h1>
+          <h1 className="flex-1 text-center text-lg font-normal pr-12 text-foreground">Confirm transfer</h1>
         </header>
 
         {/* Main Content */}
@@ -145,7 +145,7 @@ export const PinConfirmation: React.FC = () => {
                 onChange={(e) => handleInputChange(index, e.target.value)}
                 onKeyDown={(e) => handleKeyDown(index, e)}
                 onFocus={() => setFocusedIndex(index)}
-                className={`w-16 h-16 text-center text-2xl font-medium bg-white dark:bg-[#211E1E] rounded-lg border-2 transition-all duration-200 ${
+                className={`w-16 h-16 text-center text-2xl font-normal bg-white dark:bg-[#211E1E] rounded-lg border-2 transition-all duration-200 ${
                   isError 
                     ? 'border-destructive' 
                     : focusedIndex === index 

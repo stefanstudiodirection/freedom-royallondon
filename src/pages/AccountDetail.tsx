@@ -273,7 +273,7 @@ const AccountDetail: React.FC = () => {
 							>
 								<span className="text-2xl">{account.icon}</span>
 							</div>
-							<span className="font-medium text-foreground">Balance</span>
+							<span className="font-normal text-foreground">Balance</span>
 						</div>
 						<div className="text-lg ml-2 font-normal text-foreground">
 							{formatCurrency(account.balance)}
@@ -332,7 +332,7 @@ const AccountDetail: React.FC = () => {
 								Transactions
 							</h2>
 							<button
-								className="self-stretch flex items-center gap-1 text-lg text-[#A488F5] font-medium my-auto hover:text-[#9575e8] transition-colors"
+								className="self-stretch flex items-center gap-1 text-lg text-[#A488F5] font-normal my-auto hover:text-[#9575e8] transition-colors"
 								onClick={() => navigate("/budgeting")}
 							>
 								<span className="text-[#A488F5] self-stretch my-auto text-base font-normal">
@@ -359,7 +359,7 @@ const AccountDetail: React.FC = () => {
 											{getTransactionIcon(tr.type)}
 										</div>
 										<div className="flex-1 min-w-0">
-											<div className="font-medium text-foreground">
+											<div className="font-normal text-foreground">
 												{getTransactionLabel(tr.type)}
 											</div>
 											<div className="text-[#8E8E93] text-sm">

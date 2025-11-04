@@ -73,7 +73,7 @@ export const ReviewTransfer: React.FC = () => {
 					>
 						<ArrowLeft className="w-6 h-6" />
 					</button>
-					<h1 className="flex-1 text-center text-lg font-medium pr-12 text-foreground">
+					<h1 className="flex-1 text-center text-lg font-normal pr-12 text-foreground">
 						Review transfer
 					</h1>
 				</header>
@@ -112,14 +112,14 @@ export const ReviewTransfer: React.FC = () => {
 								</div>
 								<div>
 									<p className="text-[#716860] text-sm">Move from</p>
-									<p className="text-foreground text-base font-medium">
+									<p className="text-foreground text-base font-normal">
 										{source.name}
 									</p>
 								</div>
 							</div>
 							<div className="text-right">
 								<p className="text-[#716860] text-sm">Balance after transfer</p>
-								<p className="text-foreground text-base font-medium">
+								<p className="text-foreground text-base font-normal">
 									£
 									{newSourceBalance.toLocaleString("en-GB", {
 										minimumFractionDigits: 2,
@@ -142,14 +142,14 @@ export const ReviewTransfer: React.FC = () => {
 								</div>
 								<div>
 									<p className="text-[#716860] text-sm">Move to</p>
-									<p className="text-foreground text-base font-medium">
+									<p className="text-foreground text-base font-normal">
 										{destination.name}
 									</p>
 								</div>
 							</div>
 							<div className="text-right">
 								<p className="text-[#716860] text-sm">Balance after transfer</p>
-								<p className="text-foreground text-base font-medium">
+								<p className="text-foreground text-base font-normal">
 									£
 									{newDestinationBalance.toLocaleString("en-GB", {
 										minimumFractionDigits: 2,
@@ -171,7 +171,7 @@ export const ReviewTransfer: React.FC = () => {
 								<AlertTriangle className="w-6 h-6 text-[#E4B33D]" />
 							</div>
 							<div>
-								<h3 className="text-foreground text-base font-medium mb-2">
+								<h3 className="text-foreground text-base font-normal mb-2">
 									Retirement impact
 								</h3>
 								<p className="text-[#716860] text-sm leading-relaxed mb-2">
@@ -203,7 +203,7 @@ export const ReviewTransfer: React.FC = () => {
 				<div className="">
 					<Button
 						onClick={handleMoveFunds}
-						className="w-full h-14 bg-[#A488F5] hover:bg-[#9575e8] text-white font-medium text-base rounded-lg"
+						className="w-full h-14 bg-[#A488F5] hover:bg-[#9575e8] text-white font-normal text-base rounded-lg"
 					>
 						Move funds
 					</Button>

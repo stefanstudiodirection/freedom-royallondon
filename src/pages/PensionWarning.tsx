@@ -46,7 +46,7 @@ export const PensionWarning: React.FC = () => {
 					>
 						<ArrowLeft className="w-6 h-6" />
 					</button>
-					<h1 className="flex-1 text-center text-lg font-medium pr-12 text-foreground">
+					<h1 className="flex-1 text-center text-lg font-normal pr-12 text-foreground">
 						Move funds
 					</h1>
 				</header>
@@ -138,7 +138,7 @@ export const PensionWarning: React.FC = () => {
 					{/* Continue Button */}
 					<Button
 						onClick={handleContinue}
-						className="w-full h-14 bg-[#A488F5] hover:bg-[#9575e8] text-white font-medium text-base rounded-lg"
+						className="w-full h-14 bg-[#A488F5] hover:bg-[#9575e8] text-white font-normal text-base rounded-lg"
 					>
 						I understand, continue
 					</Button>

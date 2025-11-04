@@ -490,7 +490,7 @@ const Budgeting: React.FC = () => {
 									{accounts.savings.icon}
 								</div>
 								<div className="flex flex-col items-start">
-									<span className="font-medium">Savings account</span>
+									<span className="font-normal">Savings account</span>
 									<span className="text-sm text-muted-foreground">
 										{formatCurrency(accounts.savings.balance)}
 									</span>
@@ -506,7 +506,7 @@ const Budgeting: React.FC = () => {
 									{accounts.currentAccount.icon}
 								</div>
 								<div className="flex flex-col items-start">
-									<span className="font-medium">Current account</span>
+									<span className="font-normal">Current account</span>
 									<span className="text-sm text-muted-foreground">
 										{formatCurrency(accounts.currentAccount.balance)}
 									</span>
@@ -533,7 +533,7 @@ const Budgeting: React.FC = () => {
 						<h2 className="text-lg font-normal text-foreground">
 							Categories
 						</h2>
-						<button className="text-sm text-[#A488F5] font-medium">Edit</button>
+						<button className="text-sm text-[#A488F5] font-normal">Edit</button>
 					</div>
 
 					<div className="flex gap-4 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
@@ -553,7 +553,7 @@ const Budgeting: React.FC = () => {
 												{category.icon}
 											</div>
 											<div>
-												<h3 className="font-medium text-foreground">
+												<h3 className="font-normal text-foreground">
 													{category.name}
 												</h3>
 												<p className="text-xs text-muted-foreground">
@@ -579,7 +579,7 @@ const Budgeting: React.FC = () => {
 											</span>{" "}
 											/ {formatCurrency(category.target)}
 										</span>
-										<span className="font-medium text-foreground">
+										<span className="font-normal text-foreground">
 											{percentage.toFixed(0)}%
 										</span>
 									</div>
@@ -645,7 +645,7 @@ const Budgeting: React.FC = () => {
 									/>
 									<span className="text-sm text-foreground">{cat.name}</span>
 								</div>
-								<span className="text-sm font-medium text-foreground">
+								<span className="text-sm font-normal text-foreground">
 									{formatCurrency(cat.spent)}
 								</span>
 							</div>
@@ -660,7 +660,7 @@ const Budgeting: React.FC = () => {
 							Recent transactions
 						</h2>
 						<button
-							className="text-sm text-[#A488F5] font-medium"
+							className="text-sm text-[#A488F5] font-normal"
 							onClick={() => navigate("/transactions")}
 						>
 							See all
@@ -685,7 +685,7 @@ const Budgeting: React.FC = () => {
 										{getTransactionIcon(transaction.type)}
 									</div>
 									<div className="flex-1 min-w-0">
-										<div className="text-foreground text-base font-medium">
+										<div className="text-foreground text-base font-normal">
 											{getTransactionLabel(transaction.type)}
 										</div>
 										<div className="text-[#8E8E93] text-sm">
