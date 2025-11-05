@@ -24,6 +24,7 @@ export const useAccountCardsStagger = (
 				duration: 0.6,
 				ease: "power2.out",
 				stagger: 0.15,
+        delay: 0.3,
 			});
 		},
 		{ scope: containerRef }
